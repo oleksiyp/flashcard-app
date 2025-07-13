@@ -123,7 +123,7 @@ const FlashCardView: React.FC<FlashCardViewProps> = ({ cards, category, onBack }
                 <div className="flashcard-front">
                   <div className="card-image-container">
                     <img
-                      src={currentCard.image}
+                      src={`${import.meta.env.BASE_URL}${currentCard.image}`}
                       alt={currentCard.czech}
                       className="card-image"
                       loading="lazy"

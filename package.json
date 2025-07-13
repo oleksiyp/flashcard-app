@@ -14,10 +14,12 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run download-images:ci && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist",
+    "download-images": "bash scripts/download-images.sh",
+    "download-images:ci": "CI=true bash scripts/download-images.sh"
   },
   "dependencies": {
     "framer-motion": "^12.23.3",
