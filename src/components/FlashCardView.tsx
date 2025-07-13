@@ -245,7 +245,9 @@ const FlashCardView: React.FC<FlashCardViewProps> = ({ cards, category, mode, on
                     />
                   </div>
                   <div className="card-content">
-                    <h3 className="czech-word">{currentCard.czech}</h3>
+                    {!(mode === 'learn' && showTranslation) && (
+                      <h3 className="czech-word">{currentCard.czech}</h3>
+                    )}
                     {mode === 'view' && !isFlipped && (
                       <p className="tap-hint">Tap to see translation</p>
                     )}
