@@ -7,9 +7,11 @@ import FlashCardView from './components/FlashCardView';
 import Header from './components/Header';
 
 type AppView = 'categories' | 'flashcards';
+type AppMode = 'view' | 'learn';
 
 function App() {
   const [currentView, setCurrentView] = useState<AppView>('categories');
+  const [appMode, setAppMode] = useState<AppMode>('view');
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
   const [currentCards, setCurrentCards] = useState<FlashCard[]>([]);
 
@@ -32,9 +34,28 @@ function App() {
     setCurrentView('flashcards');
   };
 
+  const toggleMode = () => {
+    setAppMode(appMode === 'view' ? 'learn' : 'view');
+  };
+
   return (
     <div className="app">
       <Header />
+      
+      <div className="mode-toggle">
+        <button 
+          onClick={toggleMode}
+          className={`mode-btn ${appMode === 'view' ? 'active' : ''}`}
+        >
+          📖 View Words
+        </button>
+        <button 
+          onClick={toggleMode}
+          className={`mode-btn ${appMode === 'learn' ? 'active' : ''}`}
+        >
+          🎓 Learn Words
+        </button>
+      </div>
       
       <main className="main-content">
         <AnimatePresence mode="wait">
@@ -63,6 +84,7 @@ function App() {
               <FlashCardView
                 cards={currentCards}
                 category={selectedCategory}
+                mode={appMode}
                 onBack={handleBackToCategories}
               />
             </motion.div>

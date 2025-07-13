@@ -341,3 +341,150 @@
     gap: 0.5rem;
   }
 }
+
+/* Learning mode styles */
+.show-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+
+.show-btn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.translation-section {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.translation-section .english-word {
+  color: #007bff;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.learning-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.learning-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.learning-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.learned-btn {
+  background: #28a745;
+  color: white;
+}
+
+.learned-btn:hover {
+  background: #218838;
+}
+
+.revised-btn {
+  background: #ffc107;
+  color: #212529;
+}
+
+.revised-btn:hover {
+  background: #e0a800;
+}
+
+.no-idea-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.no-idea-btn:hover {
+  background: #c82333;
+}
+
+.learned-toggle {
+  background: #f8f9fa;
+  border: 2px solid #dee2e6;
+  color: #495057;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.learned-toggle:hover {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.learned-toggle.learned {
+  background: #d4edda;
+  border-color: #28a745;
+  color: #155724;
+}
+
+.learned-toggle.learned:hover {
+  background: #c3e6cb;
+}
+
+@media (max-width: 768px) {
+  .learning-actions {
+    gap: 0.5rem;
+  }
+  
+  .learning-btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .show-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .learned-toggle {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .learning-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .learning-btn {
+    flex: 1;
+    max-width: 150px;
+  }
+}
